@@ -1,1 +1,1 @@
- web:python main.py flask run
+ web: python main.py flask run
