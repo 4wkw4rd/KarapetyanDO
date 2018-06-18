@@ -1,0 +1,29 @@
+<header>
+			<div id="stuck_container">
+				<div class="container">
+					<div class="row">
+						<div class="grid_12">
+							<h1>
+								<a href="/">
+									<img src="{{ url_for('static', filename='images/logo.png') }}" alt="D.K.">
+								</a>
+							</h1>
+							<div class="menu_block">
+								<nav class="horizontal-nav full-width horizontalNav-notprocessed">
+									<ul class="sf-menu">
+										<li {% if pageHome %} class="current" {% endif %}><a href="/">Обо мне</a></li>
+
+										<li {% if pagePortf %} class="current" {% endif %}><a href="/portfolio">Портфолио</a></li>
+
+										<li {% if pageResume %} class="current" {% endif %}><a href="/resume">Резюме</a></li>
+
+										<li {% if pageCont %} class="current" {% endif %}><a href="/contacts">Контакты</a></li>
+									</ul>
+								</nav>
+								<div class="clear"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>

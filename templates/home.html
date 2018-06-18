@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Home</title>
+		<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="icon" href="images/favicon.ico">
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/stuck.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/from.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/touchTouch.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/camera.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+		<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery-migrate-1.1.1.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/superfish.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.equalheights.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.mobilemenu.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.easing.1.3.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/tmStickUp.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.ui.totop.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/touchTouch.jquery.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/owl.carousel.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/sForm.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/camera.js') }}"></script>
+		
+		<script src="{{ url_for('static', filename='js/jquery.mobile.customized.min.js') }}"></script>
+		
+		<script>
+		$(document).ready(function(){
+			jQuery('#camera_wrap').camera({
+				loader: false,
+				pagination: false ,
+				minHeight: '200',
+				thumbnails: false,
+				height: '39,0625%',
+				caption: true,
+				navigation: true,
+				fx: 'mosaic'
+			});
+			var owl = $("#owl");
+			owl.owlCarousel({
+				items : 7, //10 items above 1000px browser width
+				itemsDesktop : [995,5], //5 items between 1000px and 901px
+				itemsDesktopSmall : [767, 3], // betweem 900px and 601px
+				itemsTablet: [700, 3], //2 items between 600 and 0
+				itemsMobile : [479, 2], // itemsMobile disabled - inherit from itemsTablet option
+				navigation : true,
+			});
+			$().UItoTop({ easingType: 'easeOutQuart' });
+			$('#stuck_container').tmStickUp({});
+			$('.gallery a.gal_item').touchTouch();
+		});
+		</script>
+		
+	</head>
+	<body class="page1" id="top">
+
+	{% set pageHome = True %}
+
+	{% include 'header.html' %}
+
+		<div class="main">
+			<div class="slider_wrapper">
+				<div id="camera_wrap" class="">
+					<div data-src="{{ url_for('static', filename='images/slide.jpg') }}">
+						<div class="caption fadeIn">
+							<div class="title">Добро пожаловать!</div>
+							<p>Меня зовут Даниил. Я - Digital Artist. Работаю с 2D и 3D графикой. Буду рад сотрудничеству с вами! </p>
+							<p>На этом сайте вы можете ознакомиться с моими предыдущими работами и, если вас заинтересует то, что вы увидите, переходите в раздел "Контакты" и свяжитесь со мной.</p>
+							<a href="/contacts">Контакты</a>
+						</div>
+					</div>
+					<div data-src="{{ url_for('static', filename='images/slide1.jpg') }}">
+						<div class="caption fadeIn">
+							<div class="title">Добро пожаловать</div>
+							<p>Меня зовут Даниил. Я - Digital Artist. Работаю с 2D и 3D графикой. Буду рад сотрудничеству с вами!</p>
+							<p>Ознакомится с моими работами вы можете в разделе "Портфолио" </p>
+							<a href="/portfolio">Портфолио</a>
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+
+			<div class="block1">
+				<div class="container">
+					<div class="row">
+						<div class="grid_12">
+							<div class="rel">
+								<p>
+								Добрый день! Меня зовут Даниил, и вы попали на страницу с моими работами. Буду рад сотрудничеству с вами. 
+								</p>
+								<a href="/portfolio" class="btn bt__1">Подробнее</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="content">
+				<div class="container"><div class="ic"></div>
+					<div class="row">
+						<div class="grid_12">
+							<h2>Портфолио</h2>
+							<div class="gallery">
+								<div class="row">
+									<div class="grid_4">
+										<a href="{{ url_for('static', filename='images/big1.jpg') }}" class="gal_item">
+											<img src="{{ url_for('static', filename='images/page1_img1.jpg') }}" alt="">
+											<div class="gal_caption">2D Арт </div>
+											<span class="gal_magnify"></span>
+										</a>
+									</div>
+									<div class="grid_4">
+										<a href="{{ url_for('static', filename='images/big2.jpg') }}" class="gal_item">
+											<img src="{{ url_for('static', filename='images/page1_img2.jpg') }}" alt="">
+											<div class="gal_caption">3D Арт</div>
+											<span class="gal_magnify"></span>
+										</a>
+									</div>
+									<div class="grid_4">
+										<a href="{{ url_for('static', filename='images/big3.jpg') }}" class="gal_item">
+											<img src="{{ url_for('static', filename='images/page1_img3.jpg') }}" alt="">
+											<div class="gal_caption">Анимация</div>
+											<span class="gal_magnify"></span>
+										</a>
+									</div>
+									<div class="grid_4">
+										<a href="{{ url_for('static', filename='images/big4.jpg') }}" class="gal_item">
+											<img src="{{ url_for('static', filename='images/page1_img4.jpg') }}" alt="">
+											<div class="gal_caption">Роспись стен</div>
+											<span class="gal_magnify"></span>
+										</a>
+									</div>
+									<div class="grid_4">
+										<a href="{{ url_for('static', filename='images/big5.jpg') }}" class="gal_item">
+											<img src="{{ url_for('static', filename='images/page1_img5.jpg') }}" alt="">
+											<div class="gal_caption">Скетчинг</div>
+											<span class="gal_magnify"></span>
+										</a>
+									</div>
+									<div class="grid_4">
+										<a href="{{ url_for('static', filename='images/big6.jpg') }}" class="gal_item">
+											<img src="{{ url_for('static', filename='images/page1_img6.jpg') }}" alt="">
+											<div class="gal_caption">Живопись</div>
+											<span class="gal_magnify"></span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clear"></div>
+						<div class="grid_4">
+						
+						</div>
+						<div class="clear"></div>
+						<div class="grid_12">
+							<h3 class="head1">Работы</h3>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div id="owl">
+					<div class="item"><img src="{{ url_for('static', filename='images/car_img1.jpg') }}" alt=""></div>
+					<div class="item"><img src="{{ url_for('static', filename='images/car_img2.jpg') }}" alt=""></div>
+					<div class="item"><img src="{{ url_for('static', filename='images/car_img3.jpg') }}" alt=""></div>
+					<div class="item"><img src="{{ url_for('static', filename='images/car_img4.jpg') }}" alt=""></div>
+					<div class="item"><img src="{{ url_for('static', filename='images/car_img5.jpg') }}" alt=""></div>
+					<div class="item"><img src="{{ url_for('static', filename='images/car_img1.jpg') }}" alt=""></div>
+					<div class="item"><img src="{{ url_for('static', filename='images/car_img2.jpg') }}" alt=""></div>
+					<div class="item"><img src="{{ url_for('static', filename='images/car_img3.jpg') }}" alt=""></div>
+					<div class="item"><img src="{{ url_for('static', filename='images/car_img4.jpg') }}" alt=""></div>
+					<div class="item"><img src="{{ url_for('static', filename='images/car_img5.jpg') }}" alt=""></div>
+				</div>
+			</section>
+			
+		</div>
+
+		
+	</body>
+</html>
