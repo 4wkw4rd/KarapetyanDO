@@ -1,1 +1,1 @@
- web: gunicorn dkarapetyan.wsgi 
+ web: main.py flask run
