@@ -1,1 +1,1 @@
- web: gunicorn KarapetyanDO.wsgi
+ web: gunicorn app:app
